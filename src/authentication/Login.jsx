@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { supabase } from './supabaseClient'
 
-export default function Auth({ onSwitchToSignUp }) {
+export default function Auth() {
   const [loading, setLoading] = useState(false)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -133,13 +133,12 @@ export default function Auth({ onSwitchToSignUp }) {
             <p className="text-text-primary/70 mb-4">
               Non hai ancora un account?
             </p>
-            <button 
-              className="px-6 py-3 bg-transparent text-gold-400 border-2 border-gold-400 rounded-2xl font-semibold hover:bg-gold-400 hover:text-dark-950 transition-all duration-300"
-              type="button" 
-              onClick={onSwitchToSignUp}
+            <a 
+              href="/signup"
+              className="inline-block px-6 py-3 bg-transparent text-gold-400 border-2 border-gold-400 rounded-2xl font-semibold hover:bg-gold-400 hover:text-dark-950 transition-all duration-300"
             >
               Registrati
-            </button>
+            </a>
           </div>
         </div>
       </div>

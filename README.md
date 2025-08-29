@@ -138,6 +138,12 @@ pnpm cypress:run
 npx cypress run --spec "cypress_test/e2e/auth.cy.js"
 ```
 
+### **Routing e Navigazione**
+- 🛣️ **React Router** - Routing completo con protezione
+- 🔒 **Route Protette** - Home e Profile richiedono autenticazione
+- 🔄 **Redirect Automatici** - Dopo login/logout
+- 🚫 **404 Page** - Gestione route non trovate
+
 ### **Test Disponibili**
 - ✅ **Authentication** - Login, registrazione, validazione
 - ✅ **User Profile** - Gestione profilo, avatar, logout
@@ -146,7 +152,8 @@ npx cypress run --spec "cypress_test/e2e/auth.cy.js"
 
 ### **Struttura Componenti**
 - 🔐 **Authentication** - Login, SignUp, supabaseClient
-- 👤 **Components** - Account, Avatar
+- 👤 **Components** - Account, Avatar, ProtectedRoute
+- 🏠 **Pages** - Home, NotFound
 - 🛠️ **Utils** - Storage, ErrorBoundary, OptimizedImage
 
 > 📖 Vedi [cypress_test/README.md](cypress_test/README.md) per dettagli completi

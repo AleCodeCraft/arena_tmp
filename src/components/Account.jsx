@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { supabase } from '../authentication/supabaseClient'
 import Avatar from './Avatar'
 
 export default function Account({ session }) {
+  const navigate = useNavigate()
   const [loading, setLoading] = useState(true)
   const [username, setUsername] = useState(null)
   const [website, setWebsite] = useState(null)
@@ -64,13 +66,47 @@ export default function Account({ session }) {
     setLoading(false)
   }
 
+  const handleLogout = async () => {
+    try {
+      const { error } = await supabase.auth.signOut()
+      if (error) {
+        console.error('Errore logout:', error)
+      } else {
+        navigate('/login')
+      }
+    } catch (err) {
+      console.error('Errore imprevisto:', err)
+    }
+  }
+
+  const handleGoHome = () => {
+    navigate('/')
+  }
+
   return (
     <div className="flex justify-center items-center min-h-screen">
       <div className="w-full max-w-md">
         <div className="bg-surface-secondary rounded-3xl p-8 md:p-12 shadow-2xl border border-gold-400/20">
-          <h1 className="text-3xl md:text-4xl font-bold text-gold-400 text-center mb-8">
-            Profilo Utente
-          </h1>
+          {/* Header con navigazione */}
+          <div className="flex justify-between items-center mb-8">
+            <h1 className="text-3xl md:text-4xl font-bold text-gold-400">
+              Profilo Utente
+            </h1>
+            <div className="flex items-center space-x-4">
+              <button
+                onClick={handleGoHome}
+                className="px-4 py-2 bg-gold-400 text-dark-950 font-semibold rounded-lg hover:bg-gold-300 transition-colors duration-200"
+              >
+                🏠 Home
+              </button>
+              <button
+                onClick={handleLogout}
+                className="px-4 py-2 bg-transparent text-gold-400 border border-gold-400 rounded-lg hover:bg-gold-400 hover:text-dark-950 transition-colors duration-200"
+              >
+                🚪 Logout
+              </button>
+            </div>
+          </div>
           
           <form onSubmit={updateProfile} className="space-y-6">
             <div className="flex justify-center mb-8">

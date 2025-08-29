@@ -50,6 +50,13 @@
 - ✅ **Lazy loading** per componenti pesanti
 - ✅ **Preload critici** per performance
 
+### **8. 🛣️ ROUTING E NAVIGAZIONE**
+- ✅ **Sempre React Router** - Mai routing manuale o custom
+- ✅ **Route protette** per pagine autenticate
+- ✅ **Redirect automatici** dopo login/logout
+- ✅ **Layout consistenti** per tutte le pagine
+- ✅ **404 page** per route non trovate
+
 ---
 
 ## 🚫 **MAI FARE:**
@@ -62,6 +69,8 @@
 - ❌ TypeScript (per questo progetto)
 - ❌ Pacchetti non necessari
 - ❌ Over-engineering del codice
+- ❌ Routing manuale o custom
+- ❌ Navigazione senza React Router
 
 ---
 
