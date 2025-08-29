@@ -59,13 +59,24 @@ pnpm dev
 ```
 arena/
 ├── src/
-│   ├── components/
-│   │   ├── Auth.jsx          # Login/Signup
+│   ├── authentication/
+│   │   ├── Login.jsx         # Login/Signup
 │   │   ├── SignUp.jsx        # Registrazione
+│   │   └── supabaseClient.js # Configurazione Supabase
+│   ├── components/
 │   │   ├── Account.jsx       # Profilo utente
 │   │   └── Avatar.jsx        # Upload avatar
+│   ├── utils/
+│   │   ├── storage.js        # Gestione file storage
+│   │   ├── OptimizedImage.jsx # Componente immagine ottimizzata
+│   │   └── ErrorBoundary.jsx # Gestione errori app
 │   ├── App.jsx               # Componente principale
-│   └── supabaseClient.js     # Configurazione Supabase
+│   ├── index.css             # Stili globali
+│   └── main.jsx              # Entry point
+├── cypress_test/             # Test E2E Cypress
+│   ├── e2e/                  # Test end-to-end
+│   ├── support/              # File di supporto
+│   └── fixtures/             # Dati di test
 ├── public/                   # Asset statici
 └── script_SQL/              # Schema database
 ```
@@ -112,6 +123,33 @@ CREATE TABLE profiles (
 | Login | Registrazione | Profilo |
 |-------|---------------|---------|
 | ![Login](screenshots/login.png) | ![Signup](screenshots/signup.png) | ![Profile](screenshots/profile.png) |
+
+## 🧪 Testing
+
+### **Test E2E con Cypress**
+```bash
+# Avvia Cypress UI
+pnpm cypress:open
+
+# Esegui test in headless
+pnpm cypress:run
+
+# Test specifici
+npx cypress run --spec "cypress_test/e2e/auth.cy.js"
+```
+
+### **Test Disponibili**
+- ✅ **Authentication** - Login, registrazione, validazione
+- ✅ **User Profile** - Gestione profilo, avatar, logout
+- ✅ **Responsive Design** - Mobile, tablet, desktop
+- ✅ **Error Handling** - Gestione errori e stati
+
+### **Struttura Componenti**
+- 🔐 **Authentication** - Login, SignUp, supabaseClient
+- 👤 **Components** - Account, Avatar
+- 🛠️ **Utils** - Storage, ErrorBoundary, OptimizedImage
+
+> 📖 Vedi [cypress_test/README.md](cypress_test/README.md) per dettagli completi
 
 ## 🚀 Deploy
 

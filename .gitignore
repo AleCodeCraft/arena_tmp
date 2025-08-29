@@ -9,6 +9,9 @@ dist/
 dist-ssr/
 build/
 *.local
+.next/
+.nuxt/
+.vite/
 
 # ===== ENVIRONMENT VARIABLES =====
 .env
@@ -23,12 +26,21 @@ build/
 supabase/.temp/
 supabase/.env
 supabase/config.toml
+supabase/db/dump.sql
+supabase/seed.sql
 
-# ===== GOOGLE OAUTH =====
+# ===== SECURITY & CREDENTIALS =====
 google_client_secret.json
 google_credentials.json
 *.json.key
 client_secret*.json
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+secrets/
+.secrets/
 
 # ===== LOGS =====
 logs
@@ -62,6 +74,9 @@ pids
 # ===== PACKAGES =====
 *.tgz
 .yarn-integrity
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
 
 # ===== EDITOR =====
 .vscode/*
@@ -101,13 +116,28 @@ storybook-static/
 .out/
 .storybook-out/
 
-# ===== PWA =====
+# ===== PWA & SERVICE WORKERS =====
 sw.js
 workbox-*.js
+service-worker.js
+sw.js.map
 
-# ===== MONITORING =====
+# ===== MONITORING & ANALYTICS =====
 .sentryclirc
+.bundle-analyzer-report.html
+webpack-bundle-analyzer-report.html
 
-# ===== TEMPORARY =====
+# ===== TEMPORARY & LOCAL =====
 tmp/
 temp/
+*.local
+.local/
+local/
+
+# ===== CYPRESS =====
+cypress_test/videos/
+cypress_test/screenshots/
+cypress_test/downloads/
+cypress_test/fixtures/example.json
+cypress.env.json
+cypress.config.local.js

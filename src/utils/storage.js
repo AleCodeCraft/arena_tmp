@@ -1,4 +1,5 @@
-import { supabase } from '../supabaseClient'
+
+import { supabase } from '../authentication/supabaseClient'
 
 /**
  * Ottiene un URL pubblico per un file in storage
