@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, memo } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { supabase } from '../authentication/supabaseClient'
+import { supabase } from '../../features/auth/supabaseClient'
 
-export default function ProtectedRoute({ children }) {
+// ✅ CORRETTO - Memoization per evitare re-render non necessari
+const ProtectedRoute = memo(({ children }) => {
   const [session, setSession] = useState(null)
   const [loading, setLoading] = useState(true)
   const navigate = useNavigate()
@@ -33,10 +34,10 @@ export default function ProtectedRoute({ children }) {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-dark-950 flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-gold-400 mx-auto mb-4"></div>
-          <p className="text-gold-400 text-lg">Caricamento...</p>
+      <div className="min-h-screen bg-dark-950 flex items-center justify-center p-4 md:p-6 lg:p-8">
+        <div className="text-center space-y-4 md:space-y-6">
+          <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-gold-400 mx-auto"></div>
+          <p className="text-gold-400 text-lg">Verifica autenticazione...</p>
         </div>
       </div>
     )
@@ -47,4 +48,9 @@ export default function ProtectedRoute({ children }) {
   }
 
   return children
-}
+})
+
+// ✅ CORRETTO - Nome del componente per debugging
+ProtectedRoute.displayName = 'ProtectedRoute'
+
+export default ProtectedRoute

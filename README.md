@@ -151,9 +151,11 @@ npx cypress run --spec "cypress_test/e2e/auth.cy.js"
 - ✅ **Error Handling** - Gestione errori e stati
 
 ### **Struttura Componenti**
-- 🔐 **Authentication** - Login, SignUp, supabaseClient
-- 👤 **Components** - Account, Avatar, ProtectedRoute
-- 🏠 **Pages** - Home, NotFound
+- 🔐 **Features/Auth** - Login, SignUp, supabaseClient
+- 👤 **Features/Profile** - Account, Avatar
+- 🏠 **Features/Dashboard** - Home, NotFound
+- 🛠️ **Shared/Components** - Button, Input, ProtectedRoute
+- 🪝 **Shared/Hooks** - useAuth
 - 🛠️ **Utils** - Storage, ErrorBoundary, OptimizedImage
 
 > 📖 Vedi [cypress_test/README.md](cypress_test/README.md) per dettagli completi
