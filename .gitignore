@@ -141,3 +141,27 @@ cypress_test/downloads/
 cypress_test/fixtures/example.json
 cypress.env.json
 cypress.config.local.js
+
+# ===== PERFORMANCE & BUNDLE ANALYSIS =====
+bundle-analyzer-report.html
+webpack-bundle-analyzer-report.html
+*.bundle.js.map
+*.bundle.js.LICENSE.txt
+
+# ===== DEVELOPMENT TOOLS =====
+.eslintcache
+.stylelintcache
+.prettierignore
+.env.development
+.env.test
+
+# ===== BACKUP FILES =====
+*.bak
+*.backup
+*.old
+*.orig
+*.tmp
+
+# ===== LOCK FILES (mantieni solo pnpm-lock.yaml) =====
+package-lock.json
+yarn.lock

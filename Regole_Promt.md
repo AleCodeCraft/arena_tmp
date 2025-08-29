@@ -242,9 +242,10 @@ ROBUSTEZZA:
 ```
 SEQUENZA SEMPRE DA SEGUIRE:
 1. git status                    → Controlla stato modifiche
-2. git add .                    → Aggiungi tutte le modifiche  
-3. git commit -m "Messaggio"    → Commit con messaggio conciso
-4. git push origin main         → Push al repository remoto
+2. SISTEMA .gitignore            → Verifica e aggiorna .gitignore se necessario
+3. git add .                    → Aggiungi tutte le modifiche  
+4. git commit -m "Messaggio"    → Commit con messaggio conciso
+5. git push origin main         → Push al repository remoto
 
 VERIFICA PUSH:
 - git status → Dovrebbe mostrare "up to date"
@@ -252,6 +253,7 @@ VERIFICA PUSH:
 
 MAI FARE:
 - Commit senza git status prima
+- Commit senza verificare .gitignore
 - Messaggi vaghi come "fix" o "update"
 - Push senza commit
 - Commit multipli insieme
@@ -390,6 +392,7 @@ DURANTE SVILUPPO:
 
 PRIMA DI COMMIT:
 - git status
+- SISTEMA .gitignore (sempre)
 - Verificare responsive design
 - Controllare performance optimizations
 - Testare su mobile e desktop
@@ -421,3 +424,4 @@ Queste regole sono FISSE e DEVONO essere applicate SEMPRE!
 La VELOCITÀ è la priorità assoluta - ogni violazione compromette la user experience e la competitività dell'app.
 
 Ogni violazione compromette la qualità del progetto e la user experience.
+il che
